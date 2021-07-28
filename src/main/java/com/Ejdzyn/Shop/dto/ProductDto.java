@@ -9,6 +9,7 @@ import lombok.*;
 public class ProductDto {
 
     private Long id;
+    private Long ean;
     private String productName;
     private int quantity;
 

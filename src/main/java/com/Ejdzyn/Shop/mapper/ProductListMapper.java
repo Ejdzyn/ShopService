@@ -14,6 +14,7 @@ public class ProductListMapper implements Converter<List<ProductDto>, List<Produ
     public List<ProductDto> convert(List<Product> from) {
         return from.stream().map(product -> ProductDto.builder()
                 .id(product.getId())
+                .ean(product.getEan())
                 .productName(product.getProductName())
                 .quantity(product.getQuantity())
                 .build())

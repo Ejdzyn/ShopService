@@ -1,5 +1,6 @@
 package com.Ejdzyn.Shop.entity;
 
+import com.Ejdzyn.Shop.enums.UserType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +25,8 @@ public class User {
             nullable = false
     )
     private String email;
+
+    private UserType type = UserType.USER;
 
 
 }
