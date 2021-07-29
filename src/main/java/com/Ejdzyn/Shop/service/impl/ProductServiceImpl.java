@@ -75,6 +75,8 @@ public class ProductServiceImpl implements ProductService {
 
             p.setQuantity(p.getQuantity() - product.getQuantity());
 
+            productRepository.save(p);
+
         }
 
         return optional.isPresent();

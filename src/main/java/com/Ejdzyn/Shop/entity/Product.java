@@ -1,5 +1,6 @@
 package com.Ejdzyn.Shop.entity;
 
+import com.Ejdzyn.Shop.enums.Currency;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,10 +17,23 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true,nullable = false)
     private Long ean;
+
     @Column(unique = true,nullable = false)
     private String productName;
 
+    @Column(columnDefinition = "integer default 0")
     private int quantity;
+
+    @Column(columnDefinition = "decimal default 0")
+    private double price;
+
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "varchar(3) default 'PLN'")
+    private Currency currency;
+
+
 
 }

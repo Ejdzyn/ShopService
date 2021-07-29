@@ -17,6 +17,8 @@ public class ProductListMapper implements Converter<List<ProductDto>, List<Produ
                 .ean(product.getEan())
                 .productName(product.getProductName())
                 .quantity(product.getQuantity())
+                .price(product.getPrice())
+                .currency(product.getCurrency())
                 .build())
                 .collect(Collectors.toList());
     }

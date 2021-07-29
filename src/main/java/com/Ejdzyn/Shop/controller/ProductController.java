@@ -43,4 +43,13 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PostMapping(value = "/products/remove")
+    public ResponseEntity<Void> pop(ProductDto product) {
+        LOGGER.info("Removing {} product {}",product.getQuantity(), product.getProductName());
+
+        productService.popProduct(product);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.Ejdzyn.Shop.dto;
 
+import com.Ejdzyn.Shop.enums.Currency;
 import lombok.*;
 
 @Data
@@ -12,5 +13,8 @@ public class ProductDto {
     private Long ean;
     private String productName;
     private int quantity;
+    private double price;
+
+    private Currency currency;
 
 }

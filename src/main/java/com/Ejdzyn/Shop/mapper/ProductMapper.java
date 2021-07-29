@@ -13,6 +13,8 @@ public class ProductMapper implements Converter<Product, ProductDto> {
                 .ean(from.getEan())
                 .productName(from.getProductName())
                 .quantity(from.getQuantity())
+                .price(from.getPrice())
+                .currency(from.getCurrency())
                 .build();
     }
 }
