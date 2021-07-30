@@ -1,12 +1,7 @@
-create table if not exists products(
-    id serial primary key,
-    product_name varchar(50) not null,
-    quantity integer default 0,
-    unique(product_name)
-);
+insert into products (ean, product_name, quantity,price,currency)  values (5900497317245,'Pepsi 0.5L',6,2.99,'PLN');
+insert into products (ean, product_name, quantity,price,currency)  values (5449000054531,'Fanta 0.33L',20,1.99,'PLN');
+insert into products (ean, product_name,price) values (7622210416100,'3Bit baton',3.49);
 
-insert into products(product_name, quantity) values ('pepsi',6);
-insert into products(product_name, quantity) values ('fanta',20);
-insert into products(product_name) values ('3bit');
+/*insert into users values (1,'Adrian','adrian.wstepnik@gmail.com');*/
 
 /*update products set quantity = quantity+5 where product_name = 'pepsi'*/

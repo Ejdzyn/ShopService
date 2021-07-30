@@ -1,9 +1,7 @@
 package com.Ejdzyn.Shop.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.Ejdzyn.Shop.enums.Currency;
+import lombok.*;
 
 @Data
 @Builder(toBuilder = true)
@@ -12,7 +10,11 @@ import lombok.NoArgsConstructor;
 public class ProductDto {
 
     private Long id;
+    private Long ean;
     private String productName;
     private int quantity;
+    private double price;
+
+    private Currency currency;
 
 }

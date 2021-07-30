@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,12 +26,30 @@ public class ProductController {
     }
 
     @GetMapping(value = "/products")
-    public ResponseEntity<List<ProductDto>> getMovies() {
-        LOGGER.info("find all products");
+    public ResponseEntity<List<ProductDto>> getProducts() {
+        LOGGER.info("Find all products");
 
         List<ProductDto> products = productService.findAll();
 
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/products/add")
+    public ResponseEntity<Void> addProduct(ProductDto product) {
+        LOGGER.info("Adding new product {}", product.getProductName());
+
+        productService.addProduct(product);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/products/remove")
+    public ResponseEntity<Void> pop(ProductDto product) {
+        LOGGER.info("Removing {} product {}",product.getQuantity(), product.getProductName());
+
+        productService.popProduct(product);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

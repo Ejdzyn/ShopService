@@ -10,3 +10,32 @@ services:
       POSTGRES_DB: shop_db
     ports:
       - "5432:5432"
+
+  mongodb:
+    image: mongo
+    container_name: mongo_shop_container
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - data:/data
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
+      - ME_CONFIG_MONGODB_SERVER=mongo_shop_container
+
+volumes:
+  data: {}
+
+networks:
+  default:
+    name: mongodb_network
