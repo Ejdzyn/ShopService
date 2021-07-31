@@ -8,7 +8,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class CardDto {
+public class CartDto {
+
+    private long id;
 
     private LocalDateTime purchaseTime;
 

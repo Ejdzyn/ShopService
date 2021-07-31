@@ -4,6 +4,7 @@ import com.Ejdzyn.Shop.dto.ProductDto;
 import com.Ejdzyn.Shop.entity.Product;
 import com.Ejdzyn.Shop.mapper.ProductListMapper;
 import com.Ejdzyn.Shop.mapper.ProductMapper;
+import com.Ejdzyn.Shop.repository.CartRepository;
 import com.Ejdzyn.Shop.repository.ProductRepository;
 import com.Ejdzyn.Shop.service.ProductService;
 import lombok.AllArgsConstructor;

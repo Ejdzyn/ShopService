@@ -31,7 +31,7 @@ public class Product implements Serializable {
     private double price;
 
     @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "varchar(3) default 'PLN'")
+    @Column(columnDefinition = "varchar default 'PLN'",length = 3)
     private Currency currency;
 
 
